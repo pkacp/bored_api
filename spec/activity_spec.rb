@@ -10,8 +10,18 @@ describe Activity do
     expect(Activity.new(valid_params)).to be_instance_of Activity
   end
 
-  it 'participants count must be number' do
-    expect(Activity.new(invalid_params)).to raise_error(TypeError)
+  it 'have multiple_participants? method' do
+    expect(Activity.new(valid_params)).to respond_to(:multiple_participants?)
+  end
+
+  it '.multiple_participants? true when participants gt 1' do
+    subject = Activity.new(valid_params.merge(participants: 2))
+    expect(subject.multiple_participants?).to be_truthy
+  end
+
+  it '.multiple_participants? false when participants lt 2' do
+    subject = Activity.new(valid_params)
+    expect(subject.multiple_participants?).to be_falsey
   end
 
 
