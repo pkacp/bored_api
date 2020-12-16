@@ -1,9 +1,5 @@
-require 'net/http'
-require 'json'
-require 'uri'
+require_relative 'lib/multiple_participants_counter'
 
-uri = URI('https://www.boredapi.com/api/activity')
-
-res = Net::HTTP.get(uri)
-
-p res
+counter = MultipleParticipantsCounter.new(5)
+counter.call
+puts counter.count

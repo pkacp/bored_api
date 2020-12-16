@@ -1,6 +1,6 @@
 class MultipleParticipantsCounter
-  require 'object_from_api'
-  require 'activity'
+  require_relative 'object_from_api'
+  require_relative 'activity'
 
   attr_reader :count
 
