@@ -1,6 +1,5 @@
 require 'spec_helper'
 require 'object_from_api'
-# require 'activity'
 
 describe ObjectFromApi do
 
